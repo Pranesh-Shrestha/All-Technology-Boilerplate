@@ -82,6 +82,9 @@ jobs:
     container:
       image: node:20
     steps:
+      # ============= Install sudo (required by CargoWall) =============
+      - name: Install sudo
+        run: apt-get update && apt-get install -y sudo
       # ============= CargoWall Egress Control =============
       - name: CargoWall
         uses: code-cargo/cargowall-action@686c877967a2e096e25c53edbc750f5ae0fd1058 # v1.3.11
@@ -112,6 +115,9 @@ jobs:
     container:
       image: python:${{ inputs.PYTHON_VERSION || '3.11' }}
     steps:
+      # ============= Install sudo (required by CargoWall) =============
+      - name: Install sudo
+        run: apt-get update && apt-get install -y sudo
       # ============= CargoWall Egress Control =============
       - name: CargoWall
         uses: code-cargo/cargowall-action@686c877967a2e096e25c53edbc750f5ae0fd1058 # v1.3.11
@@ -143,6 +149,9 @@ jobs:
     container:
       image: mcr.microsoft.com/dotnet/sdk:${{ inputs.DOTNET_VERSION || '8.0' }}
     steps:
+      # ============= Install sudo (required by CargoWall) =============
+      - name: Install sudo
+        run: apt-get update && apt-get install -y sudo
       # ============= CargoWall Egress Control =============
       - name: CargoWall
         uses: code-cargo/cargowall-action@686c877967a2e096e25c53edbc750f5ae0fd1058 # v1.3.11
@@ -170,6 +179,9 @@ jobs:
     container:
       image: golang:${{ inputs.GO_VERSION || '1.22' }}
     steps:
+      # ============= Install sudo (required by CargoWall) =============
+      - name: Install sudo
+        run: apt-get update && apt-get install -y sudo
       # ============= CargoWall Egress Control =============
       - name: CargoWall
         uses: code-cargo/cargowall-action@686c877967a2e096e25c53edbc750f5ae0fd1058 # v1.3.11
@@ -204,6 +216,9 @@ jobs:
     container:
       image: maven:3.9-eclipse-temurin-${{ inputs.JAVA_VERSION || '17' }}
     steps:
+      # ============= Install sudo (required by CargoWall) =============
+      - name: Install sudo
+        run: apt-get update && apt-get install -y sudo
       # ============= CargoWall Egress Control =============
       - name: CargoWall
         uses: code-cargo/cargowall-action@686c877967a2e096e25c53edbc750f5ae0fd1058 # v1.3.11
@@ -231,6 +246,9 @@ jobs:
     container:
       image: php:${{ inputs.PHP_VERSION || '8.2' }}-cli
     steps:
+      # ============= Install sudo (required by CargoWall) =============
+      - name: Install sudo
+        run: apt-get update && apt-get install -y sudo
       # ============= CargoWall Egress Control =============
       - name: CargoWall
         uses: code-cargo/cargowall-action@686c877967a2e096e25c53edbc750f5ae0fd1058 # v1.3.11
@@ -261,6 +279,9 @@ jobs:
     container:
       image: ruby:${{ inputs.RUBY_VERSION || '3.3' }}
     steps:
+      # ============= Install sudo (required by CargoWall) =============
+      - name: Install sudo
+        run: apt-get update && apt-get install -y sudo
       # ============= CargoWall Egress Control =============
       - name: CargoWall
         uses: code-cargo/cargowall-action@686c877967a2e096e25c53edbc750f5ae0fd1058 # v1.3.11
