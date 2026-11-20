@@ -81,6 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: node:20
+      options: --cap-add=NET_ADMIN --cap-add=BPF
     steps:
       # ============= Install sudo (required by CargoWall) =============
       - name: Install sudo
@@ -114,6 +115,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: python:${{ inputs.PYTHON_VERSION || '3.11' }}
+      options: --cap-add=NET_ADMIN --cap-add=BPF
     steps:
       # ============= Install sudo (required by CargoWall) =============
       - name: Install sudo
@@ -148,6 +150,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/dotnet/sdk:${{ inputs.DOTNET_VERSION || '8.0' }}
+      options: --cap-add=NET_ADMIN --cap-add=BPF
     steps:
       # ============= Install sudo (required by CargoWall) =============
       - name: Install sudo
@@ -178,6 +181,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: golang:${{ inputs.GO_VERSION || '1.22' }}
+      options: --cap-add=NET_ADMIN --cap-add=BPF
     steps:
       # ============= Install sudo (required by CargoWall) =============
       - name: Install sudo
@@ -215,6 +219,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: maven:3.9-eclipse-temurin-${{ inputs.JAVA_VERSION || '17' }}
+      options: --cap-add=NET_ADMIN --cap-add=BPF
     steps:
       # ============= Install sudo (required by CargoWall) =============
       - name: Install sudo
@@ -245,6 +250,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: php:${{ inputs.PHP_VERSION || '8.2' }}-cli
+      options: --cap-add=NET_ADMIN --cap-add=BPF
     steps:
       # ============= Install sudo (required by CargoWall) =============
       - name: Install sudo
@@ -278,6 +284,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ruby:${{ inputs.RUBY_VERSION || '3.3' }}
+      options: --cap-add=NET_ADMIN --cap-add=BPF
     steps:
       # ============= Install sudo (required by CargoWall) =============
       - name: Install sudo
